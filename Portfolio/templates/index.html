@@ -1,0 +1,70 @@
+   <!DOCTYPE html>
+   <html lang="ru">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Портфолио</title>
+       <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+   </head>
+   <body>
+       <header>
+           <h1>Мое Портфолио</h1>
+           <nav>
+               <ul>
+                   <li><a href="#about">О себе</a></li>
+                   <li><a href="#skills">Навыки</a></li>
+                   <li><a href="#projects">Проекты</a></li>
+                   <li><a href="#contact">Контакты</a></li>
+               </ul>
+           </nav>
+       </header>
+
+       <section id="about">
+           <h2>О себе</h2>
+           <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Мое фото">
+           <p>Краткая биография о человеке...</p>
+       </section>
+
+       <section id="skills">
+           <h2>Навыки</h2>
+           <ul>
+               <li>Навык 1 - Описание навыка 1</li>
+               <li>Навык 2 - Описание навыка 2</li>
+               <li>Навык 3 - Описание навыка 3</li>
+           </ul>
+       </section>
+
+       <section id="projects">
+           <h2>Проекты</h2>
+           <div class="gallery">
+               <div class="project">
+                   <img src="{{ url_for('static', filename='images/project1.jpg') }}" alt="Проект 1">
+                   <p>Описание проекта 1</p>
+               </div>
+               <div class="project">
+                   <img src="{{ url_for('static', filename='images/project2.jpg') }}" alt="Проект 2">
+                   <p>Описание проекта 2</p>
+               </div>
+               <!-- Добавьте больше проектов по мере необходимости -->
+           </div>
+       </section>
+
+       <section id="contact">
+           <h2>Контакты</h2>
+           <form action="#" method="post">
+               <label for="name">Имя:</label>
+               <input type="text" id="name" name="name" required>
+
+               <label for="email">Email:</label>
+               <input type="email" id="email" name="email" required>
+
+               <label for="message">Сообщение:</label>
+               <textarea id="message" name="message" required></textarea>
+
+               <button type="submit">Отправить</button>
+           </form>
+       </section>
+
+       <footer>
+           <p>&copy; 2025 Мое Портфолио</p>
+       </footer>
