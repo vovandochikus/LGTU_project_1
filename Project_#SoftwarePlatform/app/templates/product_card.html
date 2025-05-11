@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{{ product.name }}</h2>
+<p>{{ product.description }}</p>
+
+<h3>Комментарии:</h3>
+<ul>
+    {% for comment in comments %}
+        <li>{{ comment.text }} - Оценка: {{ comment.rating }}</li>
+    {% endfor %}
+</ul>
+
+<h4>Добавить комментарий:</h4>
+<form method="POST" action="{{ url_for('add_comment', product_id=product.id) }}">
+    <textarea name="text" required></textarea>
+    <label for="rating">Оценка:</label>
+    <input type="number" name="rating" min="1" max="5" required>
+    <button type="submit">Отправить</button>
+</form>
+
+<a href="{{ url_for('dashboard') }}">Назад в личный кабинет</a>
+{% endblock %}

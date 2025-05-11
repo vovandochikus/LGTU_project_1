@@ -1,0 +1,4 @@
+Flask==2.x.x
+Flask-SQLAlchemy==2.x.x
+Flask-Login==0.x.x
+     

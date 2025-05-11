@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Личный кабинет</h2>
+<p>Добро пожаловать, {{ current_user.username }}!</p>
+
+<h3>Ваши продукты:</h3>
+<ul>
+    {% for product in products %}
+        <li>
+            <a href="{{ url_for('product_card', product_id=product.id) }}">{{ product.name }}</a>
+        </li>
+    {% endfor %}
+</ul>
+
+<a href="{{ url_for('logout') }}">Выйти</a>
+{% endblock %}
